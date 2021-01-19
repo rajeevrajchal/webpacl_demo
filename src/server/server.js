@@ -18,7 +18,6 @@ app.use(webpackHotMiddleware(compiler))
 const staticMiddleware = express.static("dist")
 
 app.use(staticMiddleware)
-
 //SERVER STARTING
 app.listen(8000, () => {
     console.log('server started at port 8000')
