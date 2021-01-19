@@ -20,13 +20,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(css|s[ac]ss)$/,
                 use: [
                     {
                         loader: "style-loader"
                     },
                     {
                         loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
                     }
                 ]
             },
@@ -50,11 +52,11 @@ module.exports = {
             },
             {
                 test: /\.(jpg|.webp|png)$/,
-                use:[
+                use: [
                     {
                         loader: "file-loader",
                         options: {
-                            name:"image/[name]-[hash:8].[ext]"
+                            name: "image/[name]-[hash:8].[ext]"
                         }
                     }
                 ]

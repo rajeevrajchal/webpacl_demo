@@ -1,2 +1,2 @@
 require('./index.html')
-require("./theme.css")
+require("./theme.scss")
