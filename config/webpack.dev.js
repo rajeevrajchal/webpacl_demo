@@ -1,7 +1,7 @@
 const path = require("path")
 module.exports = {
     entry: {
-        main: "./src/index.js"
+        main: ["./src/index.js"]
     },
     mode: "development",
     output: {
@@ -19,6 +19,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: "babel-loader"
+                    }
+                ],
+                exclude: /node_modules/
+            },
             {
                 test: /\.(css|s[ac]ss)$/,
                 use: [
