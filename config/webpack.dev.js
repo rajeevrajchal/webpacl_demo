@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require("webpack")
 module.exports = {
     entry: {
         main: ["./src/index.js"]
@@ -10,12 +11,7 @@ module.exports = {
         publicPath: "/"
     },
     devServer: {
-        contentBase: "dist",
-        compress: true,
-        overlay: true,
-        hot: true,
-        publicPath: "/",
-        port: 8000
+        publicPath: "/"
     },
     module: {
         rules: [
@@ -71,5 +67,8 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 }
